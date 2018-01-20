@@ -1,0 +1,117 @@
+<!-- datepickerExample.html
+     Practicing jQuery UI
+
+     Revision History
+        Aubrey Delong, 2017.06.23 Created
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Controls: Group 2</title>
+        <link rel="stylesheet" type="text/css" href="..\styles\assignmentStyle.css">
+        <link rel="stylesheet" type="text/css" href="..\styles\jquery-ui.css">
+        <script src="..\javaScript\jquery.js"></script>
+		<script src="..\javaScript\jquery-ui.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>jQuery Controls: Group 2</h1>
+            <header>
+            <nav>
+                <ul>
+                    <li><a href="..\index.html">Home</a></li>
+                    <li><a href="..\pages\progressBar_default.html">Progress Bar</a></li>
+                    <li><a href="..\pages\starRating_default.html">Star Rating</a></li>
+                    <li><a href="..\pages\datepicker_default.html">DatePicker</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <article>
+                <h3>jQuery UI Example 2: Star Rating</h3>
+                <div id="next"><a href="..\pages\datepicker_default.html">NEXT</a></div>
+                <div id="next"><a href="..\pages\progressBar_determinate2.html">PREV</a></div><br>
+                <h2>Star Rating</h2>
+                <!--Enter your code below-->
+                <div id="ratingDiv" data-rating="0">
+                    <img class="star" src="..\images\1.png" title="Poor" data-rating="1"/>
+                    <img class="star" src="..\images\1.png" title="Fair" data-rating="2"/>
+                    <img class="star" src="..\images\1.png" title="Good" data-rating="3"/>
+                    <img class="star" src="..\images\1.png" title="Excellent" data-rating="4"/>
+                    <img class="star" src="..\images\1.png" title="Amazing!" data-rating="5"/>
+                </div>
+                <br><br>
+                <button id="reset">Reset</button>
+                <button id="button">Get Rating</button>
+                <!--End of html-->
+            </article>
+        </main>
+
+        <script>
+            //Enter your code below
+            const STAR_OFF_IMAGE = "../images/1.png";
+            const STAR_ON_IMAGE = "../images/1-1.png";
+            var unclicked = true;
+
+            function GetRating()
+            {
+                return $("#ratingDiv").data("rating");
+            }
+
+
+            $(document).ready(function()
+            {
+                $("#button").click(function(){
+                    alert('The final rating is: ' + GetRating());
+                    // console.log(GetRating());
+                });
+
+                $.fn.turnOn = function() {
+                    $(this).attr('src',STAR_ON_IMAGE);
+                    return this;
+                };
+
+                $.fn.turnOff = function() {
+                    $(this).attr('src',STAR_OFF_IMAGE);
+                    return this;
+                };
+            
+                $('.star').click(function ()
+                {
+                    var currentRating = $(this).data("rating");
+                    for (var i = 1; i <= currentRating; i++) {
+                        $('[data-rating=' + i + ']').turnOn();
+                        $("#ratingDiv").data("rating", i);
+                    }
+                    unclicked = false;
+                })
+                .mouseover(function()
+                {
+                    if(unclicked){
+                        var currentRating = $(this).data("rating"); 
+                        for (var i = 0; i <= currentRating; i++) {
+                            $('[data-rating='+ i + ']').turnOn();    
+                        }
+                    }
+                })
+                .mouseout(function()
+                {
+                    if (unclicked) {
+                        $('.star').turnOff();
+                    }
+                })
+                $('#reset').click(function () {
+                    $('.star').turnOff();
+                    $("#ratingDiv").data("rating", 0);
+                    unclicked = true;
+                })
+            });
+            //End of JavaScript
+		</script>    
+
+        <footer>
+            PROG1800-17S-Sec1-Programming Dynamic Websites | Designed &amp; Coded by Jaden
+        </footer>
+    </body>
+</html>

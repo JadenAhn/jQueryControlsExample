@@ -1,0 +1,72 @@
+<!-- datepickerExample.html
+     Practicing jQuery UI
+
+     Revision History
+        Jaden Ahn, 2017.06.18: Created
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Controls: Group 2</title>
+        <link rel="stylesheet" type="text/css" href="..\styles\assignmentStyle.css">
+        <link rel="stylesheet" type="text/css" href="..\styles\jquery-ui.css">
+        <script src="..\javaScript\jquery.js"></script>
+		<script src="..\javaScript\jquery-ui.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>jQuery Controls: Group 2</h1>
+            <header>
+            <nav>
+                <ul>
+                    <li><a href="..\index.html">Home</a></li>
+                    <li><a href="..\pages\progressBar_default.html">Progress Bar</a></li>
+                    <li><a href="..\pages\starRating_default.html">Star Rating</a></li>
+                    <li><a href="..\pages\datepicker_default.html">DatePicker</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <article>
+                <h3>jQuery UI Example 3: Datepicker</h3>
+                <div id="next"><a href="..\pages\datepicker_options.html">NEXT</a></div>
+                <div id="next"><a href="..\pages\datepicker_default.html">PREV</a></div><br>
+                <h2>Datepicker: various animations</h2>
+                <!--Enter your code below-->
+                <p>Date: <input type="text" id="datepicker"></p>
+                <p>Animations:<br>
+                    <select id="anim">
+                        <option value="show">Show (default)</option>
+                        <option value="slideDown">Slide down</option>
+                        <option value="fadeIn">Fade in</option>
+                        <option value="blind">Blind (UI Effect)</option>
+                        <option value="bounce">Bounce (UI Effect)</option>
+                        <option value="clip">Clip (UI Effect)</option>
+                        <option value="drop">Drop (UI Effect)</option>
+                        <option value="fold">Fold (UI Effect)</option>
+                        <option value="slide">Slide (UI Effect)</option>
+                        <option value="">None</option>
+                    </select>
+                </p>
+                <!--End of html-->
+            </article>
+        </main>
+
+        <script>
+            //Enter your code below
+            $( document ).ready( function() {
+                $( "#datepicker" ).datepicker();
+                $( "#anim" ).on( "change", function() {
+                    $( "#datepicker" ).datepicker( "option", "showAnim", $( this ).val() );
+                });
+            } );            
+
+            //End of JavaScript
+		</script>    
+
+        <footer>
+            PROG1800-17S-Sec1-Programming Dynamic Websites | Designed &amp; Coded by Jaden
+        </footer>
+    </body>
+</html>

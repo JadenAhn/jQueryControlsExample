@@ -1,0 +1,131 @@
+<!-- datepickerExample.html
+     Practicing jQuery UI
+
+     Revision History
+        Jaden Ahn, 2017.06.18: Created
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Controls: Group 2</title>
+        <link rel="stylesheet" type="text/css" href="..\styles\assignmentStyle.css">
+        <link rel="stylesheet" type="text/css" href="..\styles\jquery-ui.css">
+        <script src="..\javaScript\jquery.js"></script>
+		<script src="..\javaScript\jquery-ui.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>jQuery Controls: Group 2</h1>
+            <header>
+            <nav>
+                <ul>
+                    <li><a href="..\index.html">Home</a></li>
+                    <li><a href="..\pages\progressBar_default.html">Progress Bar</a></li>
+                    <li><a href="..\pages\starRating_default.html">Star Rating</a></li>
+                    <li><a href="..\pages\datepicker_default.html">DatePicker</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <article>
+                <h3>jQuery UI Example 3: Datepicker</h3>
+                <div id="next"><a href="..\..\datepickerExercise\datepickerExercise.html">NEXT</a></div>
+                <div id="next"><a href="..\pages\datepicker_animation.html">PREV</a></div><br>
+                <h2>Inline Calendar</h2>
+                <p>Date: <input type="text" id="dateInput"></p>
+                <div id="datepicker"></div>
+                <br>
+
+                <h2>Show dates in other months</h2>
+                <p>Date: <input type="text" id="dateInput2"></p>
+                <div id="datepicker2"></div>
+                <br>
+
+                <h2>Display button bar</h2>
+                <p>Date: <input type="text" id="datepicker3"></p>
+                <br>
+
+                <h2>Display month and year menu</h2>
+                <p>Date: <input type="text" id="dateInput4"></p>
+                <div id="datepicker4"></div>
+                <br>
+
+                <h2>Display Multiple months</h2>
+                <p>Date: <input type="text" id="dateInput5"></p>
+                <div id="datepicker5"></div>
+                <br>                
+            </article>
+        </main>
+
+        <script>
+            //Enter your code below
+            $( document ).ready( function() {
+                $( "#datepicker" ).datepicker({
+                    inline: true,
+                    altField: '#dateInput'
+                });
+                $('#dateInput').change(function(){
+                    $('#datepicker').datepicker('setDate', $(this).val());
+                });
+            } );
+
+            $( document ).ready( function() {
+                $( "#datepicker2" ).datepicker({
+                    inline: true,
+                    altField: '#dateInput2',
+                    showOtherMonths: true,
+                    selectOtherMonths: true
+                });
+                $('#dateInput2').change(function(){
+                    $('#datepicker2').datepicker('setDate', $(this).val());
+                });
+            } );
+
+
+            $( document ).ready( function() {
+                $( "#datepicker3" ).datepicker({
+                    showOtherMonths: true,
+                    selectOtherMonths: true,
+                    showButtonPanel: true
+                });
+            } );
+
+            $( document ).ready( function() {
+                $( "#datepicker4" ).datepicker({
+                    inline: true,
+                    altField: '#dateInput4',
+                    showOtherMonths: true,
+                    selectOtherMonths: true,
+                    showButtonPanel: true,
+                    changeMonth: true,
+                    changeYear: true
+                });
+                $('#dateInput4').change(function(){
+                    $('#datepicker4').datepicker('setDate', $(this).val());
+                });
+            } );
+
+            $( document ).ready( function() {
+                $( "#datepicker5" ).datepicker({
+                    inline: true,
+                    altField: '#dateInput5',
+                    showOtherMonths: true,
+                    selectOtherMonths: true,
+                    showButtonPanel: true,
+                    changeMonth: true,
+                    changeYear: true,
+                    numberOfMonths: 3
+                });
+                $('#dateInput5').change(function(){
+                    $('#datepicker5').datepicker('setDate', $(this).val());
+                });
+            } );            
+            //End of JavaScript
+		</script>    
+
+        <footer>
+            PROG1800-17S-Sec1-Programming Dynamic Websites | Designed &amp; Coded by Jaden
+        </footer>
+    </body>
+</html>

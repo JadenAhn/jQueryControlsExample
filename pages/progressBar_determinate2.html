@@ -1,0 +1,74 @@
+<!-- progressBar_default.html
+     Practicing jQuery UI
+
+     Revision History
+        Archana Lohani, 2017.06.18: Created
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Controls: Group 2</title>
+        <link rel="stylesheet" type="text/css" href="..\styles\assignmentStyle.css">
+        <link rel="stylesheet" type="text/css" href="..\styles\jquery-ui.css">
+        <script src="..\javaScript\jquery.js"></script>
+		<script src="..\javaScript\jquery-ui.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>jQuery Controls: Group 2</h1>
+            <header>
+            <nav>
+                <ul>
+                    <li><a href="..\index.html">Home</a></li>
+                    <li><a href="..\pages\progressBar_default.html">Progress Bar</a></li>
+                    <li><a href="..\pages\starRating_default.html">Star Rating</a></li>
+                    <li><a href="..\pages\datepicker_default.html">DatePicker</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <article>
+                <h3>jQuery UI Example 1: Progress Bar</h3>
+
+                <div id="next"><a href="..\pages\starRating_default.html">NEXT</a></div>
+                <div id="next"><a href="..\pages\progressBar_determinate.html">PREV</a></div><br>
+
+                <h2>Progress Bar: determinate</h2>
+               	Select Percentage:
+               	<select id="percentage">
+               		<option value="0">0</option>
+               		<option value="10">10</option>
+               		<option value="20">20</option>
+               		<option value="30">30</option>
+               		<option value="40">40</option>
+               		<option value="50">50</option>
+               		<option value="60">60</option>
+               		<option value="70">70</option>
+               		<option value="80">80</option>
+               		<option value="90">90</option>
+               		<option value="100">100</option>
+               	</select>
+                <input type="button" id="barButton" value="setValue"><br><br>
+                <div id="progressbar"></div>
+            </article>
+        </main>
+
+        <script>
+            //code to include progress bar
+      		 $( document ).ready( function() {
+	   			$("#progressbar").progressbar();
+                $("#barButton" ).click(function(){
+	   				$( "#progressbar" ).progressbar({
+	   					value:parseInt($("#percentage").val())
+	   				})
+	   			});
+			  });
+			//End of Script
+		</script>
+
+        <footer>
+            PROG1800-17S-Sec1-Programming Dynamic Websites | Designed &amp; Coded by Jaden
+        </footer>
+    </body>
+</html>

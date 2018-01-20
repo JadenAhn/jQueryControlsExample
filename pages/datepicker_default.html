@@ -1,0 +1,55 @@
+<!-- datepickerExample.html
+     Practicing jQuery UI
+
+     Revision History
+        Jaden Ahn, 2017.06.18: Created
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Controls: Group 2</title>
+        <link rel="stylesheet" type="text/css" href="..\styles\assignmentStyle.css">
+        <link rel="stylesheet" type="text/css" href="..\styles\jquery-ui.css">
+        <script src="..\javaScript\jquery.js"></script>
+		<script src="..\javaScript\jquery-ui.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>jQuery Controls: Group 2</h1>
+            <header>
+            <nav>
+                <ul>
+                    <li><a href="..\index.html">Home</a></li>
+                    <li><a href="..\pages\progressBar_default.html">Progress Bar</a></li>
+                    <li><a href="..\pages\starRating_default.html">Star Rating</a></li>
+                    <li><a href="..\pages\datepicker_default.html">DatePicker</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <article>
+                <h3>jQuery UI Example 3: Datepicker</h3>
+                <div id="next"><a href="..\pages\datepicker_animation.html">NEXT</a></div>
+                <div id="next"><a href="..\pages\starRating_default.html">PREV</a></div><br>
+                <h2>Datepicker: default</h2>
+                <!--Enter your code below-->
+                <p>Date: <input type="text" id="datepicker"></p>
+                <!--End of html-->
+            </article>
+        </main>
+
+        <script>
+            //Enter your code below
+            $( document ).ready( function() {
+                $( "#datepicker" ).datepicker();
+            });
+
+            //End of JavaScript
+		</script>    
+
+        <footer>
+            PROG1800-17S-Sec1-Programming Dynamic Websites | Designed &amp; Coded by Jaden
+        </footer>
+    </body>
+</html>
