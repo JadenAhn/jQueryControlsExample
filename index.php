@@ -23,7 +23,7 @@
             <header>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="pages\progressBar_default.html">Progress Bar</a></li>
                     <li><a href="pages\starRating_default.html">Star Rating</a></li>
                     <li><a href="pages\datepicker_default.html">DatePicker</a></li>
